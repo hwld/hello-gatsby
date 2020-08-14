@@ -1,16 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
-import BlogLayout from "../components/BlogLayout"
+import Layout from "../components/layout"
 
 export default function About({ data }) {
   return (
-    <BlogLayout>
+    <Layout>
       <h1>About {data.site.siteMetadata.title}</h1>
       <p>
         We're the only site running on your computer dedicated to showing the
         best photos and videos of pandas eating lots of food.
       </p>
-    </BlogLayout>
+    </Layout>
   )
 }
 

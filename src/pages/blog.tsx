@@ -2,12 +2,12 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-import BlogLayout from "../components/BlogLayout"
+import Layout from "../components/layout"
 
 export default function Home({ data }) {
   console.log(data)
   return (
-    <BlogLayout>
+    <Layout>
       <div>
         <h1
           css={css`
@@ -17,6 +17,13 @@ export default function Home({ data }) {
         >
           Amazing Pandas Eating Things
         </h1>
+        <div
+          css={css`
+            margin-bottom: ${rhythm(1 / 4)};
+          `}
+        >
+          <Link to="/blog-about">about</Link>
+        </div>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
@@ -46,7 +53,7 @@ export default function Home({ data }) {
           </div>
         ))}
       </div>
-    </BlogLayout>
+    </Layout>
   )
 }
 
